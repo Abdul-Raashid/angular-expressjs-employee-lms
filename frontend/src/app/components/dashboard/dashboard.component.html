@@ -1,0 +1,43 @@
+
+<div class="dashboard">
+  <app-sidebar></app-sidebar>
+    <div class="dashboard-content">
+      
+      <h3 class="mb-4">Finance Dashboard</h3>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card finance-box bg-primary text-white">
+          <div class="card-body">
+            <h5>Budget</h5>
+            <h3>{{ budget | currency }}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card finance-box bg-success text-white">
+          <div class="card-body">
+            <h5>Revenue</h5>
+            <h3>{{ totalRevenue | currency }}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card finance-box bg-danger text-white">
+          <div class="card-body">
+            <h5>Salaries Paid</h5>
+            <h3>{{ totalSalaries | currency }}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card finance-box bg-dark text-white">
+          <div class="card-body">
+            <h5>Profit</h5>
+            <h3>{{ profit | currency }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  

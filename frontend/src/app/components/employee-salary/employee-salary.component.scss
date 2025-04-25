@@ -1,0 +1,80 @@
+/* Enhance the overall table styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for table headers */
+thead {
+  background-color: #f8f9fa;
+  color: #495057;
+  font-weight: 600;
+  
+  th {
+    padding: 16px;
+    text-align: left;
+    font-size: 1rem;
+    border-bottom: 2px solid #dee2e6;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+/* Body of the table */
+tbody {
+  tr {
+    border-bottom: 1px solid #e9ecef;
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
+
+    &:hover {
+      background-color: #f1f3f5; /* Slightly darker on hover */
+    }
+
+    /* Styling for paid rows */
+    &.paid {
+      background-color: #d4edda; /* Light green for paid salary */
+      color: #155724; /* Darker green text */
+      font-weight: bold;
+    }
+
+    td {
+      padding: 14px 18px; /* Increased padding for a cleaner look */
+      font-size: 1rem;
+      color: #343a40; /* Dark gray for text */
+      vertical-align: middle;
+    }
+
+    /* Styling for the 'Pay Now' button */
+    button.btn {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease-in-out;
+
+      &:hover {
+        background-color: #28a745; /* Slightly darker green on hover */
+      }
+
+      &:disabled {
+        background-color: #ccc !important;
+        cursor: not-allowed;
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+/* For responsive adjustments */
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.9rem; /* Slightly smaller font size on smaller screens */
+  }
+
+  .table th, .table td {
+    padding: 10px 12px; /* Reduce padding for smaller screens */
+  }
+}

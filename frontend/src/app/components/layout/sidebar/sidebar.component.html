@@ -1,0 +1,43 @@
+<div class="container">
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <h2>Flexibility Cloud Services</h2>
+    <ul>
+      <li>
+        <a routerLink="/dashboard" routerLinkActive="active-link">Dashboard</a>
+      </li>
+      <li>
+        <a routerLink="/purchase-order" routerLinkActive="active-link">Purchase Order</a>
+      </li>
+      <!-- <li>
+        <a routerLink="/invoices" routerLinkActive="active-link">Invoices</a>
+      </li> -->
+
+      <li>
+        <a [routerLink]="role === 'trainer' ? '/trainer-invoices' : '/invoices'" routerLinkActive="active-link">
+          Invoices
+        </a>
+      </li>
+
+
+
+
+      <li>
+        <a routerLink="/employee-salary" routerLinkActive="active-link">Employee Salary</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content (Navbar with Logout) -->
+  <div class="main-content">
+    <nav class="navbar">
+      <h2>Flexibility Cloud Services</h2>
+      <div class="navbar-links">
+        <button (click)="logout()" class="logout-btn">Logout</button>
+      </div>
+    </nav>
+    
+    <!-- The content of your page here -->
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div style="margin-top: 20px; text-align: center;">
+  <button (click)="goBack()" style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; font-size: 16px; cursor: pointer; border-radius: 5px; margin-bottom: 20px;">Go Back</button>
+</div>
+
+<h2 style="text-align: center; font-size: 24px; font-weight: bold; color: #333; margin-top: 20px;">Salary Slips</h2>
+
+<div *ngIf="isLoading" style="text-align: center; font-size: 16px; color: #888; margin-top: 20px;">Loading salary slips...</div>
+
+<div *ngIf="errorMessage" style="text-align: center; font-size: 16px; color: red; font-weight: bold; margin-top: 20px;">{{ errorMessage }}</div>
+
+<table *ngIf="!isLoading && salarySlips.length > 0" style="width: 100%; margin: 20px 0; border-collapse: collapse; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <thead>
+    <tr style="background-color: #4CAF50; color: white;">
+      <th style="padding: 12px; text-align: left; font-size: 14px; border: 1px solid #ddd;">Name</th>
+      <th style="padding: 12px; text-align: left; font-size: 14px; border: 1px solid #ddd;">Trainer Cost</th>
+      <th style="padding: 12px; text-align: left; font-size: 14px; border: 1px solid #ddd;">Generated Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let slip of salarySlips" style="background-color: #f2f2f2;">
+      <td style="padding: 12px; text-align: left; font-size: 14px; border: 1px solid #ddd;">{{ slip.name }}</td>
+      <td style="padding: 12px; text-align: left; font-size: 14px; border: 1px solid #ddd;">₹{{ slip.trainerCost }}</td>
+      <td style="padding: 12px; text-align: left; font-size: 14px; border: 1px solid #ddd;">{{ slip.generatedDate | date: 'short' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!isLoading && salarySlips.length === 0" style="text-align: center; font-size: 16px; color: #888; margin-top: 20px;">No salary slips available.</div>

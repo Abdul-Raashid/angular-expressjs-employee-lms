@@ -1,0 +1,52 @@
+<div class="dashboard-container">
+  <!-- Logout Button -->
+  <div class="logout-container">
+    <button class="btn logout-btn" (click)="logout()">Logout</button>
+  </div>
+
+  <!-- Dashboard Heading -->
+  <h1 class="dashboard-heading">DASHBOARD</h1>
+
+  <!-- Payment & Earnings Section -->
+  <div class="card">
+    <h3>💰 Payment & Earnings</h3>
+
+    <div class="earnings-section">
+      <div class="earnings-box" *ngFor="let period of ['lastMonth', 'lastQuarter', 'lastYear', 'lifetime']">
+        <h4>{{ formatPeriod(period) }}</h4>
+        <p><strong>Paid:</strong> ₹{{ earningsSummary[period]?.paid || 0 }}</p>
+        <p><strong>Unpaid:</strong> ₹{{ earningsSummary[period]?.unpaid || 0 }}</p>
+      </div>
+    </div>
+
+    <button class="btn" (click)="router.navigate(['/salary-slips'])">View Salary Slips</button>
+  </div>
+
+  <!-- Recent Completed Batches Section -->
+  <div class="card">
+    <h3>📚 Recently Completed Batches</h3>
+    <ul *ngIf="recentBatches.length > 0; else noBatches">
+      <li *ngFor="let batch of recentBatches">
+        {{ batch.name }} - {{ batch.date }}
+      </li>
+    </ul>
+    <ng-template #noBatches>
+      <p>No completed batches yet.</p>
+    </ng-template>
+    <button class="btn" (click)="viewAllBatches()">View All Batches</button>
+  </div>
+
+  <!-- Recent Invoices Section -->
+  <div class="card">
+    <h3>📄 Recent Invoices</h3>
+    <ul *ngIf="recentInvoices.length > 0; else noInvoices">
+      <li *ngFor="let invoice of recentInvoices">
+        Invoice #{{ invoice.id }} - ₹{{ invoice.amount }} ({{ invoice.status }})
+      </li>
+    </ul>
+    <ng-template #noInvoices>
+      <p>No recent invoices available.</p>
+    </ng-template>
+    <button class="btn" (click)="viewAllInvoices()">View All Invoices</button>
+  </div>
+</div>

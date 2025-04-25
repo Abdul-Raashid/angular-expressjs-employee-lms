@@ -1,0 +1,60 @@
+<div class="p-4">
+  <h2>All Batches</h2>
+
+  <!-- Search -->
+  <input
+    type="text"
+    [(ngModel)]="trainerName"
+    (ngModelChange)="filterBatches()"
+    placeholder="Search by trainer name"
+    class="search-input"
+  />
+
+  <div class="batch-grid">
+    <!-- Ongoing Batches -->
+    <div class="batch-card batch-ongoing">
+      <h4 class="batch-title">Ongoing Batches</h4>
+      <div *ngIf="ongoingBatches.length > 0; else noOngoing">
+        <div class="batch-item" *ngFor="let batch of ongoingBatches">
+          <p><strong>{{ batch.courseName }}</strong></p>
+          <p>Batch #: {{ batch.batchNumber }}</p>
+          <p>Trainer: {{ batch.trainerName }}</p>
+          <p>Start: {{ batch.startDate | date }}</p>
+        </div>
+      </div>
+      <ng-template #noOngoing><p>No ongoing batches</p></ng-template>
+    </div>
+
+    <!-- Completed Batches -->
+    <div class="batch-card batch-completed">
+      <h4 class="batch-title">Completed Batches</h4>
+      <div *ngIf="completedBatches.length > 0; else noCompleted">
+        <div class="batch-item" *ngFor="let batch of completedBatches">
+          <p><strong>{{ batch.courseName }}</strong></p>
+          <p>Batch #: {{ batch.batchNumber }}</p>
+          <p>Trainer: {{ batch.trainerName }}</p>
+          <p>Start: {{ batch.startDate | date }}</p>
+        </div>
+      </div>
+      <ng-template #noCompleted><p>No completed batches</p></ng-template>
+    </div>
+
+    <!-- Upcoming Batches -->
+    <div class="batch-card batch-upcoming">
+      <h4 class="batch-title">Upcoming Batches</h4>
+      <div *ngIf="upcomingBatches.length > 0; else noUpcoming">
+        <div class="batch-item" *ngFor="let batch of upcomingBatches">
+          <p><strong>{{ batch.courseName }}</strong></p>
+          <p>Batch #: {{ batch.batchNumber }}</p>
+          <p>Trainer: {{ batch.trainerName }}</p>
+          <p>Start: {{ batch.startDate | date }}</p>
+        </div>
+      </div>
+      <ng-template #noUpcoming><p>No upcoming batches</p></ng-template>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <button class="btn-secondary" (click)="goBack()">← Go Back</button>
+  </div>
+</div>

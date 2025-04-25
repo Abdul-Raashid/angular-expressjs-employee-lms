@@ -1,0 +1,42 @@
+<div class="p-4">
+  <button
+    class="bg-gray-300 text-gray-700 px-4 py-2 rounded mb-4 hover:bg-gray-400"
+    (click)="goBack()"
+  >
+    ← Back
+  </button>
+
+  <h2 class="text-2xl font-bold mb-4">All Invoices</h2>
+
+  <table class="w-full table-auto border-collapse">
+    <thead>
+      <tr class="bg-gray-100 text-left">
+        <th class="border p-2">Invoice No</th>
+        <th class="border p-2">Client</th>
+        <th class="border p-2">Trainer</th>
+        <th class="border p-2">Course</th>
+        <th class="border p-2">Start Date</th>
+        <th class="border p-2">Total (with Tax)</th>
+        <th class="border p-2">Download</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let invoice of invoices">
+        <td class="border p-2">{{ invoice.invoiceNumber }}</td>
+        <td class="border p-2">{{ invoice.clientDetails?.name }}</td>
+        <td class="border p-2">{{ invoice.trainerDetails?.name }}</td>
+        <td class="border p-2">{{ invoice.courseDetails?.courseName }}</td>
+        <td class="border p-2">{{ invoice.startDate | date: 'mediumDate' }}</td>
+        <td class="border p-2">₹{{ invoice.taxSummary?.totalWithTax }}</td>
+        <td class="border p-2">
+          <button
+            class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
+            (click)="downloadInvoice(invoice.invoiceNumber)"
+          >
+            Download
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

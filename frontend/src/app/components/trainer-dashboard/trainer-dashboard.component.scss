@@ -1,0 +1,96 @@
+.dashboard-container {
+  padding: 20px;
+  background-color: #f4f4f4;  /* Light background for contrast */
+}
+
+.dashboard-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.logout-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.logout-btn {
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.earnings-section {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.earnings-box {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 150px;
+  box-sizing: border-box;
+}
+
+.earnings-box h4 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.earnings-box p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+button.btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+button.btn:hover {
+  background-color: #0056b3;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 8px 0;
+  font-size: 1rem;
+}
+
+ul li:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}

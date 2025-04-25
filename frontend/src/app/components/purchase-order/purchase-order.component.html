@@ -1,0 +1,47 @@
+<div class="card shadow-lg p-4">
+    <h3 class="mb-4">Create Purchase Order</h3>
+    <form [formGroup]="poForm" (ngSubmit)="onSubmit()">
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label>Course Name</label>
+          <input formControlName="courseName" class="form-control" />
+        </div>
+        <div class="col-md-6">
+          <label>Company Name</label>
+          <input formControlName="companyName" class="form-control" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label>Trainer Name</label>
+          <input formControlName="trainerName" class="form-control" />
+        </div>
+        <div class="col-md-6">
+          <label>Start Date</label>
+          <input type="date" formControlName="startDate" class="form-control" />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label>Number of Days</label>
+          <input type="number" formControlName="numberOfDays" class="form-control" />
+        </div>
+        <div class="col-md-6">
+          <label>Cost Per Day</label>
+          <input type="number" formControlName="dailyCost" class="form-control" />
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label><strong>Trainer Cost</strong></label>
+        <input formControlName="trainerCost" class="form-control" />
+      </div>
+
+      
+  
+      <button type="submit" class="btn btn-primary">Submit Purchase Order</button>
+      
+
+    </form>
+  </div>
+  

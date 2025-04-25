@@ -1,0 +1,82 @@
+.p-4 {
+    padding: 2rem;
+    background: linear-gradient(135deg, #f2f9ff, #ffffff);
+    min-height: 100vh;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+  
+  .search-input {
+    margin-bottom: 1.5rem;
+    padding: 0.6rem 1rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .batch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+  
+  .batch-card {
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
+  
+    .batch-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #34495e;
+    }
+  
+    .batch-item {
+      background-color: #f9fafb;
+      padding: 0.75rem;
+      border-radius: 6px;
+      margin-bottom: 0.75rem;
+      border-left: 4px solid #2980b9;
+    }
+  }
+  
+  /* Color-coded sections */
+  .batch-ongoing {
+    border-left: 6px solid #27ae60;
+  }
+  
+  .batch-completed {
+    border-left: 6px solid #8e44ad;
+  }
+  
+  .batch-upcoming {
+    border-left: 6px solid #f39c12;
+  }
+  
+  .btn-secondary {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #2980b9;
+  }
+  
+  .mt-4 {
+    margin-top: 2rem;
+  }
+  
